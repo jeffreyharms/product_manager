@@ -24,7 +24,6 @@ module.exports.addProduct = (req, res) => {
 }
 
 module.exports.updateProduct = (req, res) => {
-    const idParams = req.params.id
     const updateVal = req.body
     Product.findOneAndUpdate({_id : req.params.id}, updateVal, {new:true, runValidators:true})
         .then(updatedProduct => res.json(updatedProduct))

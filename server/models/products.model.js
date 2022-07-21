@@ -3,19 +3,15 @@ const mongoose = require('mongoose')
 
 const ProductSchema = new mongoose.Schema({
     title : {
-        type: String,
-        required: [true,"title required"],
-        minlength: [3, "title must be 3 characters"]
+        type: String
     },
     price : {
-        type: Number,
-        required: [true,"price required"]
+        type: Number
     },
     description : {
-        type: String,
-        required: [true,"description required"],
-        minlength: [3, "description must be 3 characters"]
+        type: String
     },
 },{timestamps:true})
 
-module.exports = mongoose.model('Product', ProductSchema)
+const Product = mongoose.model('Product', ProductSchema)
+module.exports = Product
